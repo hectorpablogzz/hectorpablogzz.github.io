@@ -4,6 +4,7 @@
 
 body {
   margin: 0px;
+  background-color: LightGray;
 }
 
 img {
@@ -43,7 +44,7 @@ img {
 
 
 .main {
-  background-color: LightGray;
+  
 }
 
 #leftColumn {
