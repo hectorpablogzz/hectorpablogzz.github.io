@@ -1,0 +1,125 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.bar {
+  border: 1px solid black;
+  width: 40px;
+  height: 250px;
+  position: relative;
+  background-color: white;
+  box-shadow: 2px 2px 5px gray;
+}
+
+.percentage {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.col {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  justify-content: center;
+  margin: 20px;
+}
+
+.row {
+  width: 75px;
+  margin: 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.num {
+  width: 20px;
+}
+
+.label {
+  font-size: 10px;
+}
+
+#prodBar {
+  background-image: linear-gradient(#4040bf, #19194d);
+}
+
+#comBar {
+  background-image: linear-gradient(#0000ff, #000066);
+}
+
+#orgBar {
+  background-image: linear-gradient(#0055ff, #002266);
+}
+
+#innBar {
+  background-image: linear-gradient(#4080bf, #19334d);
+}
+
+#creBar {
+  background-image: linear-gradient(#00ffff, #006666);
+}
+
+#ecoBar {
+  background-image: linear-gradient(#40bf80, #194d33);
+}
+
+#resBar {
+  background-image: linear-gradient(#00ff00, #006600);
+}
+
+#incBar {
+  background-image: linear-gradient(#80ff00, #336600);
+}
+
+#expBar {
+  background-image: linear-gradient(#ffff00, #666600);
+}
+
+#whitesmoke {
+  background-color: whitesmoke;
+}
+
+#top {
+  
+  justify-content: center;
+  align-items: center;
+}
+
+.titles {
+  text-align: center;
+  color: white;
+  text-shadow: 0px 3px 1px black;
+  
+}
+
+input {
+  width: 20px;
+  background-color: white;
+}
+
+td {
+  padding: 2px;
+}
+
+body {
+  background-color: #99ccff;
+}
+
+table {
+  background-color: whitesmoke;
+  margin: 20px;
+}
+
+img {
+  clip-path: circle();
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+}
+
+h1 {
+  font-size: 50px;
+}
