@@ -248,16 +248,6 @@ function Hero() {
           <span className="hero__kanji" aria-hidden="true">京都 · MTY</span>
         </div>
       </div>
-      <div className="container">
-        <dl className="stats">
-          {stats.map((s) => (
-            <div className="stat" key={s.label}>
-              <dt>{s.label}</dt>
-              <dd>{s.value}</dd>
-            </div>
-          ))}
-        </dl>
-      </div>
     </section>
   )
 }
@@ -286,7 +276,17 @@ function About() {
   return (
     <section className="section" id="about">
       <div className="container split">
-        <SectionHeading index="01" kicker="About" title="Engineer for real-world systems" />
+        <div>
+          <SectionHeading index="01" kicker="About" title="Engineer for real-world systems" />
+          <dl className="facts reveal">
+            {stats.map((s) => (
+              <div className="fact" key={s.label}>
+                <dt>{s.label}</dt>
+                <dd>{s.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
         <div className="about reveal">
           {about.map((p) => (
             <p key={p.slice(0, 20)}>{p}</p>
@@ -305,12 +305,11 @@ function Experience() {
   return (
     <section className="section" id="experience">
       <div className="container">
-        <SectionHeading index="02" kicker="Experience" title="Internships & international exchange" />
+        <SectionHeading index="02" kicker="Experience" title="Work experience" />
         <ol className="timeline">
           {experience.map((job) => (
             <li className="timeline__item reveal" key={job.role}>
               <div className="timeline__meta">
-                <span className="timeline__type">{job.type}</span>
                 <span className="timeline__period">{job.period}</span>
                 <span className="timeline__loc">{job.location}</span>
               </div>

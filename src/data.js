@@ -14,8 +14,6 @@ export const profile = {
 
 export const stats = [
   { value: '2', label: 'Internships at CEMEX' },
-  { value: '100+', label: 'Locations with automated reporting' },
-  { value: '170+', label: 'Trucks monitored in real time' },
   { value: '4', label: 'Languages spoken' },
 ]
 
@@ -26,20 +24,6 @@ export const about = [
 
 export const experience = [
   {
-    type: 'Exchange',
-    company: 'Kyoto University',
-    role: 'KUINEP Exchange Student',
-    period: 'Apr 2026 – Aug 2026',
-    location: 'Kyoto, Japan',
-    highlights: [
-      'Completed the Fundamentals of Artificial Intelligence and Multimodal Artificial Intelligence courses.',
-      'Applied PyTorch and scikit-learn to machine learning, computer vision, and generative AI tasks using public datasets.',
-      'Implemented RNN, LSTM, and Transformer models in PyTorch, and fine-tuned pretrained models on audio / speech data.',
-    ],
-    tags: ['PyTorch', 'scikit-learn', 'RNN / LSTM', 'Transformers', 'Computer Vision'],
-  },
-  {
-    type: 'Internship',
     company: 'CEMEX México · Soltek',
     role: 'Soltek Implant Intern — Process Automation',
     period: 'Jan 2026 – Mar 2026',
@@ -52,7 +36,6 @@ export const experience = [
     tags: ['Node.js', 'LangChain', 'Ollama', 'Entra ID', 'Microsoft Graph'],
   },
   {
-    type: 'Internship',
     company: 'CEMEX México',
     role: 'Digital Center Intern',
     period: 'Jan 2025 – Jul 2025',
@@ -191,7 +174,11 @@ export const education = [
     degree: 'KUINEP Exchange Program',
     period: 'Apr 2026 – Aug 2026',
     location: 'Kyoto, Japan',
-    highlights: ['Took Fundamentals of AI and Multimodal AI courses (details under Experience)'],
+    highlights: [
+      'Completed the Fundamentals of Artificial Intelligence and Multimodal Artificial Intelligence courses',
+      'Applied PyTorch and scikit-learn to machine learning, computer vision, and generative AI tasks using public datasets',
+      'Implemented RNN, LSTM, and Transformer models in PyTorch, and fine-tuned pretrained models on audio / speech data',
+    ],
   },
 ]
 

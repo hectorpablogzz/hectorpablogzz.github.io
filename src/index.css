@@ -418,43 +418,31 @@ button {
   letter-spacing: 0.02em;
 }
 
-.stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  margin: 64px 0 0;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--bg-elev);
-  overflow: hidden;
+/* ---------- Sections ---------- */
+
+.facts {
+  display: flex;
+  gap: 36px;
+  margin: 0 0 40px;
 }
 
-.stat {
+.fact {
   display: flex;
   flex-direction: column-reverse;
-  padding: 22px 24px;
-  border-left: 1px solid var(--line);
 }
 
-.stat:first-child {
-  border-left: 0;
-}
-
-.stat dd {
+.fact dd {
   margin: 0;
-  font-family: var(--font-sans);
-  font-size: 34px;
+  font-size: 40px;
   font-weight: 600;
   letter-spacing: -0.04em;
   line-height: 1.1;
 }
 
-.stat dt {
-  margin-top: 4px;
+.fact dt {
   font-size: 13px;
   color: var(--text-3);
 }
-
-/* ---------- Sections ---------- */
 
 .section {
   padding: 96px 0 24px;
@@ -682,19 +670,6 @@ button {
   display: none;
 }
 
-.timeline__type {
-  align-self: flex-start;
-  margin-bottom: 6px;
-  padding: 2px 8px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--text-2);
-}
-
 .timeline__period {
   font-family: var(--font-mono);
   font-size: 13px;
@@ -864,6 +839,7 @@ button {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 18px;
+  align-items: start;
 }
 
 .edu .bullets {
@@ -1144,18 +1120,6 @@ button {
     transform: translateY(50%);
   }
 
-  .stats {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .stat:nth-child(3) {
-    border-left: 0;
-  }
-
-  .stat:nth-child(n + 3) {
-    border-top: 1px solid var(--line);
-  }
-
   .timeline__item {
     grid-template-columns: 1fr;
     gap: 10px;
@@ -1174,10 +1138,6 @@ button {
     flex-wrap: wrap;
     align-items: center;
     gap: 4px 10px;
-  }
-
-  .timeline__type {
-    margin-bottom: 0;
   }
 
   .timeline__period,
@@ -1215,14 +1175,6 @@ button {
   .recog__list,
   .edu {
     grid-template-columns: 1fr;
-  }
-
-  .stat {
-    padding: 18px;
-  }
-
-  .stat dd {
-    font-size: 32px;
   }
 
   .card {
