@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Héctor Pablo González Espinosa — Software & AI</title>
+    <meta
+      name="description"
+      content="Portfolio of Héctor Pablo González Espinosa, Computer Science student at Tecnológico de Monterrey building software and AI systems."
+    />
+    <meta property="og:title" content="Héctor Pablo González Espinosa — Software & AI" />
+    <meta
+      property="og:description"
+      content="Computer Science student at Tec de Monterrey. Internships at CEMEX, AI agents, on-device ML, multi-agent simulation."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hectorpablogzz.github.io/" />
+    <meta property="og:image" content="https://hectorpablogzz.github.io/pfp.jpeg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      // Apply the theme before first paint to avoid a light/dark flash.
+      try {
+        const t = localStorage.getItem('theme')
+        document.documentElement.dataset.theme =
+          t || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+      } catch {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
