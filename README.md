@@ -1,6 +1,6 @@
 # hectorpablogzz.github.io
 
-Personal portfolio of Héctor Pablo González Espinosa, built with React and Vite.
+My personal portfolio, built with React and Vite.
 
 ## Development
 
