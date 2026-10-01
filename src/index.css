@@ -620,6 +620,43 @@ button {
   text-align: left;
 }
 
+.key-project {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.key-project span {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-3);
+}
+
+.key-project strong {
+  font-weight: 600;
+}
+
+.key-project svg {
+  color: var(--accent);
+  transition: transform 0.2s;
+}
+
+.key-project:hover {
+  border-color: var(--accent);
+}
+
+.key-project:hover svg {
+  transform: translateX(3px);
+}
+
 /* ---------- Timeline ---------- */
 
 .timeline {
@@ -746,6 +783,15 @@ button {
   background: var(--bg-elev);
 }
 
+.project:focus {
+  outline: none;
+}
+
+.project.is-flash {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
 @keyframes rise {
   from {
     opacity: 0;
@@ -782,6 +828,26 @@ button {
   margin: 4px 0 0;
   font-size: 13px;
   color: var(--accent-text);
+}
+
+.project__status {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0 0;
+  padding: 3px 10px 3px 9px;
+  border: 1px solid color-mix(in srgb, var(--ok) 35%, var(--line));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--ok) 8%, transparent);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.project__status .status__dot {
+  width: 7px;
+  height: 7px;
 }
 
 .project__summary {

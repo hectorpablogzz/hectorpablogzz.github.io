@@ -47,6 +47,8 @@ const icons = {
   check: <path d="m9.5 16.2-4.2-4.2-1.4 1.4 5.6 5.6 11-11-1.4-1.4-9.6 9.6Z" />,
 }
 
+const projectId = (title) => `project-${title.replace(/\W+/g, '-').toLowerCase()}`
+
 function Icon({ name, size = 18 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -331,7 +333,21 @@ function Experience() {
                     <li key={h}>{h}</li>
                   ))}
                 </ul>
-                <Tags items={job.tags} />
+                {job.projects?.map((name) => (
+                  <a
+                    key={name}
+                    className="key-project"
+                    href={`#${projectId(name)}`}
+                    onClick={(e) => {
+                      e.preventDefault()
+                      window.dispatchEvent(new CustomEvent('show-project', { detail: projectId(name) }))
+                    }}
+                  >
+                    <span>Key project</span>
+                    <strong>{name}</strong>
+                    <Icon name="arrow" size={16} />
+                  </a>
+                ))}
               </article>
             </li>
           ))}
@@ -344,10 +360,11 @@ function Experience() {
 function ProjectCard({ project }) {
   const [open, setOpen] = useState(false)
   const hasMore = project.highlights.length > 0
-  const detailsId = `details-${project.title.replace(/\W+/g, '-').toLowerCase()}`
+  const id = projectId(project.title)
+  const detailsId = `details-${id}`
 
   return (
-    <article className={`project ${project.featured ? 'project--featured' : ''}`}>
+    <article id={id} tabIndex={-1} className={`project ${project.featured ? 'project--featured' : ''}`}>
       <div className="project__top">
         <span className="project__cats">{project.categories.join(' · ')}</span>
         {project.date && <span className="project__date">{project.date}</span>}
@@ -355,6 +372,12 @@ function ProjectCard({ project }) {
       <h3 className="project__title">{project.title}</h3>
       <p className="project__subtitle">{project.subtitle}</p>
       <p className="project__context">{project.context}</p>
+      {project.status && (
+        <p className="project__status">
+          <span className="status__dot" aria-hidden="true" />
+          {project.status}
+        </p>
+      )}
       <p className="project__summary">{project.summary}</p>
       {project.metric && (
         <div className="metric metric--inline">
@@ -387,6 +410,29 @@ function ProjectCard({ project }) {
 
 function Projects() {
   const [filter, setFilter] = useState('All')
+  const [focus, setFocus] = useState(null)
+
+  // Experience entries link to their project card; make sure it's visible, then bring it into view.
+  useEffect(() => {
+    const onShow = (e) => {
+      setFilter('All')
+      setFocus({ id: e.detail, at: Date.now() })
+    }
+    window.addEventListener('show-project', onShow)
+    return () => window.removeEventListener('show-project', onShow)
+  }, [])
+
+  useEffect(() => {
+    const el = focus && document.getElementById(focus.id)
+    if (!el) return
+    const smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    el.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'center' })
+    el.focus({ preventScroll: true })
+    el.classList.add('is-flash')
+    const t = setTimeout(() => el.classList.remove('is-flash'), 1600)
+    return () => clearTimeout(t)
+  }, [focus])
+
   const shown = filter === 'All' ? projects : projects.filter((p) => p.categories.includes(filter))
 
   return (

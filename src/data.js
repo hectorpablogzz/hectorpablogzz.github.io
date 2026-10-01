@@ -28,12 +28,8 @@ export const experience = [
     role: 'Soltek Implant Intern — Process Automation',
     period: 'Jan 2026 – Mar 2026',
     location: 'Monterrey, Mexico',
-    highlights: [
-      'Developed an AI-powered agent for automated operational reporting using Node.js, LangChain, and Ollama.',
-      'Registered and configured the reporting app in Microsoft Entra ID (Azure AD): API permissions, OAuth scopes, and Microsoft Graph API access.',
-      'Worked as a Soltek implant within CEMEX building AI-focused automation tools.',
-    ],
-    tags: ['Node.js', 'LangChain', 'Ollama', 'Entra ID', 'Microsoft Graph'],
+    highlights: ['Worked as a Soltek implant intern within CEMEX, developing AI-focused process automation tools.'],
+    projects: ['CRETAMail'],
   },
   {
     company: 'CEMEX México',
@@ -43,17 +39,48 @@ export const experience = [
     metric: { value: '2–3 h → 5 min', label: 'operations response time' },
     highlights: [
       'Helped create the Digital Center, a technology innovation hub for the CEMEX construction department.',
-      'Built a GPS-based automated alert system monitoring ETAs and routes for 170+ cement trucks.',
-      'Automated operational reporting across 100+ locations nationwide, cutting response time from 2–3 hours to about 5 minutes.',
-      'Onboarded and trained plant managers on a new checklist system, gathering requirements from stakeholders and writing user documentation.',
+      'Worked with a cross-disciplinary team on digital transformation projects across 100+ locations nationwide.',
+      'Automated operational reporting across those locations, cutting the operations team’s response time from 2–3 hours to about 5 minutes.',
+      'Onboarded and trained plant managers and staff on a new checklist system, gathering requirements from stakeholders and writing user documentation.',
     ],
-    tags: ['Python', 'Pandas', 'SQLite', 'REST APIs', 'JavaScript'],
+    projects: ['CRETA'],
   },
 ]
 
 export const projectCategories = ['All', 'AI / ML', 'Mobile', 'Systems', 'Networking', 'IoT']
 
 export const projects = [
+  {
+    title: 'CRETA',
+    subtitle: 'GPS truck monitoring & alert system',
+    context: 'CEMEX Digital Center internship',
+    status: 'Still in use at CEMEX today',
+    date: '2025',
+    categories: ['Systems'],
+    featured: true,
+    metric: { value: '170+', label: 'cement trucks monitored' },
+    summary:
+      'An automated alert system that uses GPS data to oversee cement truck ETAs and routes, improving how the operations team monitors the fleet.',
+    highlights: [
+      'Built the system with a Python and Pandas data layer, a SQLite database, and REST APIs.',
+      'Developed the web interface in HTML, CSS, and JavaScript.',
+    ],
+    tags: ['Python', 'Pandas', 'SQLite', 'REST APIs', 'JavaScript', 'HTML / CSS'],
+  },
+  {
+    title: 'CRETAMail',
+    subtitle: 'AI agent for operational reporting',
+    context: 'Soltek internship at CEMEX',
+    date: '2026',
+    categories: ['AI / ML'],
+    featured: true,
+    summary: 'An AI-powered agent that automates operational reporting, built with Node.js, LangChain, and Ollama.',
+    highlights: [
+      'Developed the agent in Node.js, using LangChain for orchestration and Ollama to run the language model.',
+      'Registered and configured the app in Microsoft Entra ID (Azure AD), setting up API permissions, OAuth scopes, and Microsoft Graph API access.',
+    ],
+    tags: ['Node.js', 'LangChain', 'Ollama', 'Entra ID', 'Microsoft Graph'],
+  },
   {
     title: 'Bancoach',
     subtitle: 'AI financial assistant',
